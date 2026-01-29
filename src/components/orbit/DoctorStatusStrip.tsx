@@ -187,7 +187,7 @@ interface DoctorStatusStripProps {
 export function DoctorStatusStrip({ onDoctorSelect, categoryFilter, selectedDoctorId, doctors }: DoctorStatusStripProps) {
     // Filter doctors by category
     const filteredDoctors = categoryFilter && categoryFilter !== 'all'
-        ? doctors.filter(d => d.specialty.toLowerCase() === categoryFilter) // Changed from categoryId to specialty
+        ? doctors.filter(d => d.specialization.toLowerCase() === categoryFilter) // Corrected property name
         : doctors;
 
     // Get category label for display
