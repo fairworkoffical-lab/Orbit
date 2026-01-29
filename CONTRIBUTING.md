@@ -9,8 +9,8 @@ Click the "Fork" button on the top right of the repository page to create your o
 
 ### 2. Clone Your Fork
 ```bash
-git clone https://github.com/<your-username>/orbit.git
-cd orbit
+    git clone https://github.com/<your-username>/Orbit.git
+    cd Orbit
 ```
 
 ### 3. Create a Branch
