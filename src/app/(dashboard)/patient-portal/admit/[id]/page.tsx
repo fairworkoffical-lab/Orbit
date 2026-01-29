@@ -7,7 +7,10 @@ import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { useParams } from 'next/navigation';
 
-export default function PatientAdmissionPage({ params }: { params: { id: string } }) {
+export default function PatientAdmissionPage() {
+    const params = useParams();
+    const id = params?.id as string;
+
     const [request, setRequest] = useState<AdmissionRequest | null>(null);
     const [categories, setCategories] = useState<BedCategory[]>([]);
     const [selectedCategory, setSelectedCategory] = useState<string>('');
@@ -22,7 +25,7 @@ export default function PatientAdmissionPage({ params }: { params: { id: string 
         const data = IpdService.getData();
         setCategories(data.categories);
 
-        let req = data.requests.find(r => r.id === params.id);
+        let req = data.requests.find(r => r.id === id);
         if (!req) {
             // FALLBACK FOR DEMO: Get latest pending
             req = data.requests.find(r => r.status === 'PENDING');
@@ -32,7 +35,7 @@ export default function PatientAdmissionPage({ params }: { params: { id: string 
             setRequest(req);
             setSelectedCategory(req.recommendedCategory);
         }
-    }, [params.id]);
+    }, [id]);
 
     const handleConfirm = () => {
         if (!request) return;
