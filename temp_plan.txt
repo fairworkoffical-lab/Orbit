@@ -1,0 +1,4 @@
+
+// Add instruction to PrescriptionItem
+// Add checkInTime to QueueItem
+// This is a placeholder for the actual tool call

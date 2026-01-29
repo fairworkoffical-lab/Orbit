@@ -1,0 +1,103 @@
+﻿
+> orbit-app@0.1.0 lint
+> eslint
+
+
+D:\Projects\Orbit\src\app\(dashboard)\doctor\page.tsx
+    3:38   warning  'useRef' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     @typescript-eslint/no-unused-vars
+    6:104  warning  'Send' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       @typescript-eslint/no-unused-vars
+   56:12   warning  'showPreview' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       @typescript-eslint/no-unused-vars
+   57:58   error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               @typescript-eslint/no-explicit-any
+  169:11   warning  'completedPatients' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 @typescript-eslint/no-unused-vars
+  173:11   warning  'handleCallNext' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    @typescript-eslint/no-unused-vars
+  209:11   warning  'handleFinalizeVisit' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               @typescript-eslint/no-unused-vars
+  248:11   warning  'handleUnavailableClick' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            @typescript-eslint/no-unused-vars
+  302:29   error    Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+D:\Projects\Orbit\src\app\(dashboard)\doctor\page.tsx:302:29
+  300 |     const handleCallPatient = (p: QueueItem) => {
+  301 |         setCurrentPatient(p);
+> 302 |         setConsultStartTime(Date.now());
+      |                             ^^^^^^^^^^ Cannot call impure function
+  303 |         const newQueue = queue.map(q => q.token === p.token ? { ...q, status: 'in-progress' as const } : q);
+  304 |         saveQueue(newQueue);
+  305 |     };                                                                                                                                                                                                                                                                                                                                                                                                                                                       react-hooks/purity
+  368:90   error    Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+D:\Projects\Orbit\src\app\(dashboard)\doctor\page.tsx:368:90
+  366 |                                                 Token #{currentPatient.token}
+  367 |                                             </span>
+> 368 |                                             <ElapsedTimer startTime={consultStartTime || Date.now()} />
+      |                                                                                          ^^^^^^^^^^ Cannot call impure function
+  369 |                                         </div>
+  370 |                                         <h2 className="text-2xl font-black text-slate-800 leading-tight mb-1">{currentPatient.patientName}</h2>
+  371 |                                         <div className="flex items-center gap-2 text-sm font-bold text-slate-400">                                                                                                        react-hooks/purity
+  484:102  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               @typescript-eslint/no-explicit-any
+  744:70   error    Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+D:\Projects\Orbit\src\app\(dashboard)\doctor\page.tsx:744:70
+  742 |                                                     <span className="flex items-center gap-1">
+  743 |                                                         <Clock className="w-3 h-3" />
+> 744 |                                                         {Math.floor((Date.now() - (patient.checkInTime || Date.now())) / 60000)}m wait
+      |                                                                      ^^^^^^^^^^ Cannot call impure function
+  745 |                                                     </span>
+  746 |                                                 </div>
+  747 |                                                 <div className="mt-3 pt-3 border-t border-slate-200/50 flex items-center justify-between opacity-50 group-hover:opacity-100 transition-opacity">                                        react-hooks/purity
+  744:107  error    Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+D:\Projects\Orbit\src\app\(dashboard)\doctor\page.tsx:744:107
+  742 |                                                     <span className="flex items-center gap-1">
+  743 |                                                         <Clock className="w-3 h-3" />
+> 744 |                                                         {Math.floor((Date.now() - (patient.checkInTime || Date.now())) / 60000)}m wait
+      |                                                                                                           ^^^^^^^^^^ Cannot call impure function
+  745 |                                                     </span>
+  746 |                                                 </div>
+  747 |                                                 <div className="mt-3 pt-3 border-t border-slate-200/50 flex items-center justify-between opacity-50 group-hover:opacity-100 transition-opacity">  react-hooks/purity
+
+D:\Projects\Orbit\src\app\page.tsx
+  28:137  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\Projects\Orbit\src\components\orbit\EmergencyOverride.tsx
+  47:20  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  53:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  54:38  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\Projects\Orbit\src\components\orbit\Header.tsx
+  4:10  warning  'cn' is defined but never used  @typescript-eslint/no-unused-vars
+
+D:\Projects\Orbit\src\components\orbit\OperationalQueue.tsx
+   3:17  warning  'useState' is defined but never used      @typescript-eslint/no-unused-vars
+  17:20  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\Projects\Orbit\src\components\orbit\PrescriptionTemplate.tsx
+  124:43  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  124:60  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+D:\Projects\Orbit\src\components\orbit\RegistrationPanel.tsx
+  94:13  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+D:\Projects\Orbit\src\components\orbit\RegistrationPanel.tsx:94:13
+  92 |     useEffect(() => {
+  93 |         if (phone.length === 10) {
+> 94 |             setLookupStatus('searching');
+     |             ^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  95 |
+  96 |             // Simulate API lookup
+  97 |             setTimeout(() => {  react-hooks/set-state-in-effect
+
+Γ£û 23 problems (14 errors, 9 warnings)
+
