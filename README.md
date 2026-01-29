@@ -7,7 +7,6 @@ ORBIT is an open-source, event-driven Hospital Operations Platform built for Ind
 **Think: Kubernetes for hospital operations.**
 
 ![Orbit Dashboard](https://via.placeholder.com/800x400?text=Orbit+Dashboard+Preview)
-*(Note: Replace with actual screenshot)*
 
 ## � Why ORBIT Exists
 Hospitals don’t fail because of lack of doctors. They fail because of unmanaged flow.
@@ -138,8 +137,8 @@ ORBIT is not a certified medical device. Clinical responsibility always lies wit
 
 1.  **Clone the repository**:
     ```bash
-    git clone https://github.com/<your-username>/orbit.git
-    cd orbit
+    git clone https://github.com/fairworkoffical-lab/Orbit.git
+    cd Orbit
     ```
 
 2.  **Install dependencies**:
