@@ -130,7 +130,6 @@ export const useAppStore = create<AppState>()(
             })),
 
             // --- RBAC IMPLEMENTATION ---
-            users: [], // Initial empty list
 
             addUser: (user) => set((state) => ({
                 users: [...state.users, user],
