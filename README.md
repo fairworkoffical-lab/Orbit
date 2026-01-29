@@ -1,8 +1,6 @@
-# 🛰️ ORBIT
-**The Operating System for High-Chaos Hospitals**
-
+# Orbit Hospital OS 🏥
+[![Live Demo](https://img.shields.io/badge/demo-online-green.svg)](https://orbit-h2m5.vercel.app/)
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ffairworkoffical-lab%2FOrbit)
-[![Live Demo](https://img.shields.io/badge/demo-online-green.svg)](https://orbit-hospital-os.vercel.app/)
 
 ORBIT is an open-source, event-driven Hospital Operations Platform built for India’s busiest OPDs and IPDs — where queues break, staff burn out, and patients lose visibility. Unlike traditional HMS systems, ORBIT is designed around real-time flow orchestration, not static records.
 
