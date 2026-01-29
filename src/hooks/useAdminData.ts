@@ -49,7 +49,7 @@ export const useAdminData = (selectedDate: Date = new Date()) => {
             const isToday = selectedDate.toDateString() === new Date().toDateString();
 
             // Helpful helper to check if a timestamp is on the selected date
-            const isSameDay = (timestamp: number) => {
+            const isSameDay = (timestamp?: number) => {
                 if (!timestamp) return false;
                 const date = new Date(timestamp);
                 return date.toDateString() === selectedDate.toDateString();
