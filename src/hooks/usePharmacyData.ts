@@ -77,7 +77,7 @@ export const usePharmacyData = () => {
                         id: `PH-${Date.now()}-${Math.floor(Math.random() * 1000)}`,
                         visitId: visitId,
                         patientName: visit.patientName,
-                        doctorName: visit.doctorName || 'Unknown',
+                        doctorName: (visit as any).doctorName || 'Unknown',
                         age: parseInt(visit.age) || 0,
                         gender: visit.gender || 'O',
                         timestamp: visit.checkInTime || Date.now(),
