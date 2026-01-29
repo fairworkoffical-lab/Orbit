@@ -85,6 +85,7 @@ export interface Prescription {
     dateAdded: string;
     doctorId: string;
     doctorName: string;
+    status?: 'ACTIVE' | 'STOPPED';
 }
 
 export interface Ward {
