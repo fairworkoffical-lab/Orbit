@@ -78,7 +78,7 @@ export const usePharmacyData = () => {
                         visitId: visitId,
                         patientName: visit.patientName,
                         doctorName: (visit as any).doctorName || 'Unknown',
-                        age: parseInt(visit.age) || 0,
+                        age: visit.age || 0,
                         gender: visit.gender || 'O',
                         timestamp: visit.checkInTime || Date.now(),
                         status: 'PENDING',
