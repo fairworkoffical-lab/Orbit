@@ -3,6 +3,7 @@
 import React from 'react';
 
 import { Doctor, DoctorStatusType } from '@/lib/types';
+export type { Doctor, DoctorStatusType };
 
 // Initial state - All queues empty, calculated based on efficiency
 /* 
