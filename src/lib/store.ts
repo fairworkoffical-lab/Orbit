@@ -65,7 +65,7 @@ export const useAppStore = create<AppState>()(
             notifications: [],
             users: [], // RBAC
 
-            addVisit: (visit) => set((state) => {
+            addVisit: (visit: Visit) => set((state) => {
                 const scoredVisit = {
                     ...visit,
                     priority_score: calculatePriorityScore(visit)
@@ -74,7 +74,7 @@ export const useAppStore = create<AppState>()(
                 return { visits: newVisits };
             }),
 
-            updateVisitStatus: (id, status) => set((state) => {
+            updateVisitStatus: (id: string, status: import('./types').VisitStatus) => set((state) => {
                 const now = new Date().toISOString();
                 const newVisits = state.visits.map(v => {
                     if (v.id !== id) return v;
@@ -89,7 +89,7 @@ export const useAppStore = create<AppState>()(
                 return { visits: sortQueue(newVisits) };
             }),
 
-            findPatientByPhone: (phone) => {
+            findPatientByPhone: (phone: string) => {
                 return get().visits.find(v => v.contact_number === phone && v.status !== 'COMPLETED' && v.status !== 'DROPPED_OUT');
             },
 
@@ -99,11 +99,6 @@ export const useAppStore = create<AppState>()(
 
             login: (role, id) => set({ currentUser: { role, id } }),
             logout: () => set({ currentUser: null }),
-
-            // Super Admin Actions
-            addDoctor: (doc) => set((state) => ({ doctors: [...state.doctors, doc] })),
-            updateDoctor: (id, updates) => set((state) => ({ doctors: state.doctors.map(d => d.id === id ? { ...d, ...updates } : d) })),
-            removeDoctor: (id) => set((state) => ({ doctors: state.doctors.filter(d => d.id !== id) })),
 
             // --- SUPER ADMIN ACTIONS ---
             addDoctor: (doc) => set((state) => ({
