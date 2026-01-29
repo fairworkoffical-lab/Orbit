@@ -40,7 +40,9 @@ export interface Visit {
 
     // Overrides
     override_flag?: boolean;
+    override_flag?: boolean;
     override_weight?: number;
+    visitFee?: number;
 }
 
 export interface Patient {
