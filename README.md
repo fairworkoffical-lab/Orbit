@@ -154,7 +154,8 @@ ORBIT is not a certified medical device. Clinical responsibility always lies wit
     ```
 
 4.  **Open in Browser**:
-    Visit [http://localhost:3000](http://localhost:3000) to see the application.
+    Visit [http://localhost:3000](http://localhost:3000) to see your **local instance**.
+    *(For the public live demo, view [orbit-h2m5.vercel.app](https://orbit-h2m5.vercel.app/))*
 
 ## 📄 License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
