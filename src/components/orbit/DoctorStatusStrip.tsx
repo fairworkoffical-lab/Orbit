@@ -104,6 +104,7 @@ const statusConfig: Record<DoctorStatusType, { color: string; bg: string; label:
     BREAK: { color: 'text-slate-500', bg: 'bg-slate-100 border-slate-200', label: 'Break', icon: '☕' },
     LATE: { color: 'text-orange-700', bg: 'bg-orange-50 border-orange-200', label: 'Late', icon: '⚠️' },
     UNAVAILABLE: { color: 'text-red-700', bg: 'bg-red-50 border-red-200', label: 'N/A', icon: '⛔' },
+    AVAILABLE: { color: 'text-emerald-700', bg: 'bg-emerald-50 border-emerald-200', label: 'Ready', icon: '🟢' },
 };
 
 function DoctorCard({ doctor, onSelect, isSelected }: { doctor: Doctor; onSelect?: (id: string) => void; isSelected?: boolean }) {
