@@ -306,7 +306,16 @@ export const IpdService = {
     },
 
     // 2. GETTERS
-    getData: () => {
+    getData: (): {
+        categories: BedCategory[];
+        wards: Ward[];
+        beds: Bed[];
+        requests: AdmissionRequest[];
+        buildings: Building[];
+        roomTypes: RoomType[];
+        amenities: Amenity[];
+        equipment: Equipment[];
+    } => {
         if (typeof window === 'undefined') return {
             categories: [] as BedCategory[],
             wards: [] as Ward[],
