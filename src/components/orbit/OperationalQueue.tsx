@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 
 export interface QueueItem {
+    id?: string;
     token: string;
     patientName: string;
     doctorName: string;
